@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact User 📌</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }   
+        .main_div{
+            width: 100vw;
+            height: 100vh;
+        }
+        .main_div nav .navbar-brand{
+            color: orange !important;
+            font-weight: bold;
+        }
+        .main_div nav .navbar-collapse ul li a:hover{
+            color: #3498db !important;
+        }
+        .main_div nav .navbar-collapse ul li a.active{
+            color: #3498db !important;
+            font-weight: bold;
+        }
+        .main_div .register_div{
+            width: 1000px;
+            height: 540px;
+            background: #fff;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px;
+            margin: auto;
+        }
+        .main_div .register_div .left_div img{
+            width: 100%;
+        }
+        .main_div .register_div .left_div{
+            width: 50%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+        }
+        .main_div .register_div .right_div form .form-group{
+            width: 360px;
+        }
+        .main_div .register_div .right_div form input{
+            box-shadow: none;
+            outline: none;
+        }
+        .main_div .register_div .right_div h2{
+            color: goldenrod;
+        }
+        .main_div .register_div .right_div form button{
+            color: #fff !important;
+            box-shadow: none;
+            border: none;
+            outline: none;
+        }
+        .main_div .register_div .right_div hr{
+            width: 370px;
+        }
+        .main_div .register_div .right_div textarea{
+            box-shadow: none;
+            outline: none;
+        }
+        .main_div .register_div .right_div{
+            width: 50%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.1/css/all.min.css" integrity="sha512-9my9Mb2+0YO+I4PUCSwUYO7sEK21Y0STBAiFEYoWtd2VzLEZZ4QARDrZ30hdM1GlioHJ8o8cWQiy8IAb1hy/Hg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main_div">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">HSR Motors</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav m-auto">
+                <li class="nav-item mx-5 active">
+                  <a class="nav-link" href="./index.html"><i class="fa fa-home mx-2" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mx-5 active">
+                  <a class="nav-link" href="#"><i class="fa fa-info-circle mx-2" aria-hidden="true"></i>
+                    About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mx-5 active">
+                  <a class="nav-link" href="./Login.html"><i class="fa fa-lock mx-2" aria-hidden="true"></i>Admin Login<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mx-5 active">
+                  <a class="nav-link active" href="#"><i class="fa fa-phone mx-2" aria-hidden="true"></i>Contact Us<span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+        <div class="register_div my-5">
+            <div class="left_div">
+                <img src="./Contact.png" alt="" srcset="">
+            </div>
+            <div class="right_div">
+                <form class="" method="post">
+                    <div class="form-group my-3">
+                      <label for="exampleInputEmail1"><i class="fa fa-user-secret mx-2" aria-hidden="true"></i>Full Name :</label>
+                      <input required autocomplete="off" type="text" class="form-control" name="UserName" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group my-3">
+                      <label for="exampleInputPassword1"><i class="fa fa-phone mx-2" aria-hidden="true"></i>
+                        Contact No :</label>
+                      <input required autocomplete="off" type="text" name="Password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group my-3">
+                      <label for="exampleInputPassword1"><i class="fa fa-key mx-2" aria-hidden="true"></i>Email ID :</label>
+                      <input required autocomplete="off" type="email" name="Password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"><i class="fa fa-question-circle mx-2" aria-hidden="true"></i>
+                            Any Query ?</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                    <input type="button" class="my-4 w-100 btn"  id="submit_btn" style="background: goldenrod !important; color: #fff;" value="Contact Us"></button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let Submit = document.getElementById("#submit");
+
+    Submit.addEventListener('click',()=>{
+        swal("Good Job!", "We Will Contact Your Shortly", "success");
+    });
+
+</script>
+

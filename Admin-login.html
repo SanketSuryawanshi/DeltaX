@@ -1,0 +1,379 @@
+<?php
+
+$Host = "68.178.145.128";
+$User = "maapranam";
+$Pass = "12345";
+$Database = "my_contacts";
+
+$Con = mysqli_connect($Host,$User,$Pass,$Database);
+
+
+?>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+   
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <!-- Favicon ================================================== -->
+  <link rel="icon" type="image/png" href="images/MAAPRANAAMLOGO.png">
+
+  <!-- CSS ================================================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="plugins/animate-css/canimate.css">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <!-- Colorbox -->
+  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <!-- Template styles-->
+  <link rel="stylesheet" href="css/style.css">
+
+
+    <title>Maa Pranaam Admin </title>
+
+    <style>
+    footer a{
+        text-decoration:none;
+        color:#fff;
+    }
+      h1{
+          text-align:center;
+          margin:25px;
+          color:#E1272D;
+      }
+      .contacts{
+          padding:50px;
+      }
+      header{
+          box-shadow:0 2px 15px rgba(0,0,0,0.1);
+      }
+          
+       
+          .main_div{
+              width: 100vw;
+              height: 100vh;
+          }
+          .main_div nav .navbar-brand{
+              color: orange !important;
+              font-weight: bold;
+          }
+          .main_div nav .navbar-collapse ul li a:hover{
+              color: #3498db !important;
+          }
+          .main_div nav .navbar-collapse ul li a.active{
+              color: #3498db !important;
+              font-weight: bold;
+          }
+          .main_div .register_div{
+              width: 1000px;
+              height: 540px;
+              background: #fff;
+              box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 35px;
+              margin: auto;
+          }
+          .main_div .register_div .left_div img{
+              width: 100%;
+          }
+          .main_div .register_div .left_div{
+              width: 50%;
+              height: 70%;
+              display: flex;
+              justify-content: center;
+          }
+          .main_div .register_div .right_div form .form-group{
+              width: 360px;
+          }
+          .main_div .register_div .right_div form input{
+              box-shadow: none;
+              outline: none;
+          }
+          .main_div .register_div .right_div h2{
+              color: goldenrod;
+          }
+          .main_div .register_div .right_div form button{
+              color: #fff !important;
+              box-shadow: none;
+              border: none;
+              outline: none;
+          }
+          .main_div .register_div .right_div hr{
+              width: 370px;
+          }
+          .main_div .register_div .right_div{
+              width: 50%;
+              height: 90%;
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              padding: 60px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+          }
+
+          @media screen and (max-width:698px) {
+            .main_div .register_div{
+              flex-direction: column;
+            }
+          }
+
+    </style>
+
+  </head>
+  <body>
+      <header id="header" class="header-one">
+ 
+
+  <div class="site-navigation">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div id="navbar-collapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav mr-auto">
+                      <li class="mx-3 nav-item active mx-3" style="margin: auto;">
+                          <img src="./images/icon-image/logo.jpeg" style="width: 40px;" alt="">
+                      </li>
+                      <li class="mx-3 nav-item active">
+                          <a href="#" class="nav-link" data-toggle="dropdown">Home</a>
+                      </li>
+
+                      <li class="mx-3 nav-item dropdown">
+                          <a style="color: #000 !important;" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a style="color: #000 !important;" href="about.html">About Us</a></li>
+                            <li><a style="color: #000 !important;" href="./team.html">Our Team</a></li>
+                          </ul>
+                      </li>
+              
+                      <li class="mx-3 nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a style="color: #000 !important;" href="./all_projects.html">All Projects</a></li>
+                          <li><a style="color: #000 !important;" href="./completed_projects.html">Completed Projects</a></li>
+                          <li><a style="color: #000 !important;" href="./ongoing_projects.html">Ongoing Projects</a></li>
+                          <li><a style="color: #000 !important;" href="./upcoming_projects.html">Upcoming Projects</a></li>
+                        </ul>
+                    </li>
+              
+                      <li class="mx-3 nav-item dropdown">
+                          <a style="color: #000 !important;" href="./services.html" class="nav-link">Services</a>
+                      </li>
+              
+                      <li class="mx-3 nav-item"><a style="color: #000 !important;" class="nav-link" href="contact.php">Contact</a></li>
+                    </ul>
+                </div>
+              </nav>
+          </div>
+          <!--/ Col end -->
+        </div>
+        <!--/ Row end -->
+
+        <div class="nav-search">
+          <span id="search" style="font-weight: bold;"> <span style="color: red;">MAA </span> PRANAAM</span>
+          <!-- <span id="search"><i class="fa fa-search"></i></span> -->
+        </div><!-- Search end -->
+
+        <div class="search-block" style="display: none;">
+          <label for="search-field" class="w-100 mb-0">
+            <input type="text" class="form-control" id="search-field" placeholder="Type what you want and enter">
+          </label>
+          <span class="search-close">&times;</span>
+        </div><!-- Site search end -->
+    </div>
+    <!--/ Container end -->
+
+  </div>
+  <!--/ Navigation end -->
+</header>
+    
+      <div class="main_div">
+        <div class="register_div my-5">
+            <div class="left_div">
+                <img src="./login.png" alt="" srcset="">
+            </div>
+            <div class="right_div">
+                <h2 style="display: flex;">Login</h2>
+                
+                <hr />
+                <form class="">
+                    <div class="form-group my-3">
+                      <label for="exampleInputEmail1"><i class="fa fa-user-secret mx-2" aria-hidden="true"></i>User Name</label>
+                      <input required autocomplete="off" type="text" class="form-control" name="EmailID" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group my-3">
+                      <label for="exampleInputPassword1"><i class="fa fa-key mx-2" aria-hidden="true"></i>Password</label>
+                      <input required autocomplete="off" type="password" name="Password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <input type="submit" class="my-4 w-100 btn"  id="submit_btn" style="background: goldenrod !important; color: #fff;" value="Sign In" name="submit"></button>
+                  </form>
+            </div>
+        </div>
+    </div>
+   
+      
+      <!--footer start -->
+    <footer id="footer" class="footer">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-4 col-md-6 footer-widget footer-about">
+              <h3 class="widget-title" style="color: #e1272d;">About Us</h3>
+              <img loading="lazy" width="200px" height="150px" class="footer-logo" src="./images/MAA_PRANAAM_LOGO1.png"
+                alt="Maa Pranaam">
+              <p style="color: #000;">When We Build We Build With Conscience</p>
+              <div class="footer-social">
+                <ul>
+
+                  <li><a href="https://twitter.com/MaaPranaam" aria-label="Twitter"><i class="fab fa-twitter"
+                        style="color: #000;"></i></a>
+                  </li>
+                  <li><a href="https://www.instagram.com/maapranaam_buildcon/" aria-label="Instagram"><i
+                        class="fab fa-instagram" style="color: #000;"></i></a></li>
+                  <li><a href="https://wa.me/+918208859530" aria-label="Github"><i class="fab fa-whatsapp"
+                        style="color: #000;"></i></a></li>
+                </ul>
+              </div><!-- Footer social end -->
+            </div><!-- Col end -->
+
+            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+              <h3 class="widget-title" style="color: #e1272d;">Working Hours</h3>
+              <div class="working-hours" style="color: #000;">
+                We work 6 days a week, every day excluding major holidays. Contact us if you have an emergency, with our
+                Hotline and Contact form.
+                <br><br> Monday - Friday: <span class="text-right">10:00 AM - 04:00 PM </span>
+                <br> Saturday: <span class="text-right">10:00 AM - 02:00 PM</span>
+              </div>
+            </div><!-- Col end -->
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+              <h3 class="widget-title" style="color: #e1272d;">Services</h3>
+              <ul class="list-arrow">
+                <li><a href="index.html" style="color: #000;">Home Construction</a></li>
+                <li><a href="services.html" style="color: #000;">General Contracting</a></li>
+                <li><a href="services.html" style="color: #000;">Construction Management</a></li>
+                <li><a href="index.html" style="color: #000;">Design and Build</a></li>
+                <li><a href="index.html" style="color: #000;">Renovation Construction</a></li>
+              </ul>
+            </div><!-- Col end -->
+          </div><!-- Row end -->
+        </div><!-- Container end -->
+      </div><!-- Footer main end -->
+      <!-- Car Amimation Section Start -->
+      <div class="new_footer_area bg_color">
+        <div class="new_footer_top">
+
+          <div class="footer_bg">
+            <div class="footer_bg_one"></div>
+            <div class="footer_bg_two"></div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Car Amimation Section End -->
+
+
+      <div class="copyright">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright-info">
+                <span>Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear())
+                  </script>, Designed &amp; Developed by MaaPranaam Buildcon PVT. LTD.
+                </span>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="footer-menu text-center text-md-right">
+                <ul class="list-unstyled">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="team.html">Our People</a></li>
+                  <li><a href="contact.php">Contact</a></li>
+                  <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- Row end -->
+
+          <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+            <button class="btn btn-primary" title="Back to Top">
+              <i class="fa fa-angle-double-up"></i>
+            </button>
+          </div>
+
+        </div><!-- Container end -->
+      </div><!-- Copyright end -->
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Optional JavaScript -->
+
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+    
+   
+</body>
+</html>
+
+<?php
+
+if(isset($_POST['submit'])){
+  $EmailID = $_POST['EmailId'];
+  $Password = $_POST['Password'];
+
+  if($EmailID=="admin@gmail.com" and $Password=="Admin@@123"){
+    ?>
+
+    <script>
+      alert("YES");
+      window.location.href = 'https://maapranaam.co.in/https:/Contact-details.php';
+      swal("Good job !!", "Form Submitted Succesfully !!", "success");
+      </script>
+
+<?php
+  }
+  else{
+    ?>
+
+<script>
+      alert("NO");
+      swal("Error !!", "Please try again after some time !!", "error");
+    </script>
+
+    <?php
+  }
+
+}
+
+?>
